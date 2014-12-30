@@ -4,6 +4,13 @@ This app create pdf from html source uses wkhtmltopdf cli tool
 
 First of all you need to cli tool with dependencies. follow the commands,
 
+### For Linux
+
+Install Xvfd:
+```
+sudo apt-get install xvfb
+```
+
 Install Fonts:
 ```
 sudo apt-get install xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic
@@ -19,15 +26,24 @@ Python Flask
 pip install -r requirements.pip
 ```
 
+### For OSX
+
+Download wkhtmltopdf from [here](http://wkhtmltopdf.org/downloads.html) and install 
+
+Python Flask
+```
+pip install -r requirements.pip
+```
+
 __run :__
 python pdfservice.py
 
-## Usage:
+## Usage
 Send your html content to yourip:port/makepdf end point in raw_body
 
-## Tip:
+## Tip
 You can change ip/port in pdfservice.py on line 6
 
-## P.S.:
+## P.S.
 Tested on OSX,
 Not tested on linux distros
