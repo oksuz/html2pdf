@@ -4,11 +4,6 @@ This app create pdf from html source uses wkhtmltopdf cli tool
 
 First of all you need to cli tool with dependencies. follow the commands,
 
-Install Xvfd:
-```
-sudo apt-get install xvfb
-```
-
 Install Fonts:
 ```
 sudo apt-get install xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic
