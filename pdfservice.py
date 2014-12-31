@@ -27,7 +27,7 @@ def make_pdf():
     pdf_temp = create_temp_file(".pdf")
 
     try:
-        wkhtmltopdf(html_temp.name, pdf_temp.name, dpi=100, orientation=orientation.capitalize(),)
+        wkhtmltopdf(html_temp.name, pdf_temp.name, dpi=100, orientation=str(orientation.capitalize()),)
     except Exception as e:
         return make_response("Error: %s" % (e.message), 500)
 
