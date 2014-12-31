@@ -1,12 +1,17 @@
 from flask import Flask, request, make_response
 from tempfile import NamedTemporaryFile
-import subprocess
+from wkhtmltopdf import wkhtmltopdf
 import os
 
 ip, port = "0.0.0.0", 8080
 
 app = Flask(__name__)
 app.debug = False
+
+@app.route("/ping", methods=["GET"])
+def ping():
+    return "PONG!"
+
 
 @app.route("/makepdf", methods=["POST"])
 def make_pdf():
@@ -21,17 +26,8 @@ def make_pdf():
     html_temp = create_temp_file(".html", request.data)
     pdf_temp = create_temp_file(".pdf")
 
-    cmd = ["wkhtmltopdf"]
-    cmd.append("--dpi")
-    cmd.append("100")
-    cmd.append("--orientation")
-    cmd.append(orientation.capitalize())
-    cmd.append(html_temp.name)
-    cmd.append(pdf_temp.name)
-
     try:
-        process = subprocess.Popen(cmd)
-        process.communicate()
+        wkhtmltopdf(html_temp.name, pdf_temp.name, dpi=100, orientation=orientation.capitalize(),)
     except Exception as e:
         return make_response("Error: %s" % (e.message), 500)
 

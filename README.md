@@ -26,15 +26,6 @@ Python Flask
 pip install -r requirements.pip
 ```
 
-### For OSX
-
-Download wkhtmltopdf from [here](http://wkhtmltopdf.org/downloads.html) and install 
-
-Python Flask
-```
-pip install -r requirements.pip
-```
-
 __run :__
 python pdfservice.py
 
@@ -44,5 +35,5 @@ Send your html content to yourip:port/makepdf end point in raw_body
 ## Tip
 You can change ip/port in pdfservice.py on line 6
 
-. . .
-tested on Ubuntu 14 and Osx Mavericks
+## P.S.
+Osx doesn't support yet
