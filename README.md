@@ -44,6 +44,5 @@ Send your html content to yourip:port/makepdf end point in raw_body
 ## Tip
 You can change ip/port in pdfservice.py on line 6
 
-## P.S.
-Tested on OSX,
-Not tested on linux distros
+. . .
+tested on Ubuntu 14 and Osx Mavericks
