@@ -4,7 +4,6 @@ This app create pdf from html source uses wkhtmltopdf cli tool
 
 First of all you need to cli tool with dependencies. follow the commands,
 
-### For Linux
 
 Install Xvfd:
 ```
